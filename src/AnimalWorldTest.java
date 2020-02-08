@@ -85,13 +85,6 @@ public class AnimalWorldTest {
 	}
 	
 	@Test
-	public void testFishSwim() {
-		Fish fish = new Fish();
-		fish.swim();
-		assertEquals("Fish is swimming" + END_CHAR, output.toString());
-	}
-	
-	@Test
 	public void testFishNotSingSwim() {
 		FishNotSing fishNotSing = new FishNotSing();
 		fishNotSing.swim();
@@ -103,6 +96,48 @@ public class AnimalWorldTest {
 		FishNotWalk fishNotWalk = new FishNotWalk();
 		fishNotWalk.swim();
 		assertEquals("FishNotWalk is swimming" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testSharkSize() {
+		Shark shark = new Shark();
+		shark.size();
+		assertEquals("Shark is big" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testSharkColor() {
+		Shark shark = new Shark();
+		shark.color();
+		assertEquals("Shark is grey" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testSharkEatOtherFish() {
+		Shark shark = new Shark();
+		shark.eatOtherFish();
+		assertEquals("Shark is eat other fish" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testClownfishSize() {
+		Clownfish clownfish = new Clownfish();
+		clownfish.size();
+		assertEquals("Clownfish is small" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testClownfishColor() {
+		Clownfish clownfish = new Clownfish();
+		clownfish.color();
+		assertEquals("Clownfish is colorful (orange)" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testClownfishMakeJoke() {
+		Clownfish clownfish = new Clownfish();
+		clownfish.makeJoke();
+		assertEquals("Clownfish is makeJoke" + END_CHAR, output.toString());
 	}
 	
 	

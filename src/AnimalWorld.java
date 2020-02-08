@@ -124,33 +124,97 @@ class ParrotDuck extends Parrot {
 	}
 }
 
-class Fish implements AnimalCanSwim {
-	public void swim() {
-		System.out.println("Fish is swimming");
-	}
+interface Fish extends AnimalCanSwim {
+	void size();
+	void color();
 }
 
-class FishNotSing extends Fish {
+class FishNotSing implements Fish {
+	@Override
 	public void swim() {
 		System.out.println("FishNotSing is swimming");
 	}
+
+	@Override
+	public void size() {
+		System.out.println("FishNotSing size");
+	}
+
+	@Override
+	public void color() {
+		System.out.println("FishNotSing color");
+	}
 }
 
-class FishNotWalk extends Fish {
+class FishNotWalk implements Fish {
+	@Override
 	public void swim() {
 		System.out.println("FishNotWalk is swimming");
+	}
+
+	@Override
+	public void size() {
+		System.out.println("FishNotWalk size");
+	}
+
+	@Override
+	public void color() {
+		System.out.println("FishNotWalk color");
+	}
+}
+
+class Shark implements Fish {
+	@Override
+	public void swim() {
+		System.out.println("Shark is swimming");
+	}
+
+	@Override
+	public void size() {
+		System.out.println("Shark is big");
+	}
+
+	@Override
+	public void color() {
+		System.out.println("Shark is grey");
+	}
+	
+	public void eatOtherFish() {
+		System.out.println("Shark is eat other fish");
+	}
+}
+
+class Clownfish implements Fish {
+	@Override
+	public void swim() {
+		System.out.println("Clownfish is swimming");
+	}
+
+	@Override
+	public void size() {
+		System.out.println("Clownfish is small");
+	}
+
+	@Override
+	public void color() {
+		System.out.println("Clownfish is colorful (orange)");
+	}
+	
+	public void makeJoke() {
+		System.out.println("Clownfish is makeJoke");
 	}
 }
 
 public class AnimalWorld {
 	public static void main(String[] args) {
-		Fish fish = new Fish();
-		fish.swim();
-
-		FishNotSing fishNotSing = new FishNotSing();
-		fishNotSing.swim();
+		Shark shark = new Shark();
+		shark.size();
+		shark.color();
+		shark.eatOtherFish();
 		
-		FishNotWalk fishNotWalk = new FishNotWalk();
-		fishNotWalk.swim();
+		Clownfish clownfish = new Clownfish();
+		clownfish.size();
+		clownfish.color();
+		clownfish.makeJoke();
 	}
 }
