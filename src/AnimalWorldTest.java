@@ -10,6 +10,18 @@ import org.junit.Test;
 public class AnimalWorldTest {
 	private final ByteArrayOutputStream output = new ByteArrayOutputStream();
 	public static final String END_CHAR = "\r\n";
+	public static Animal[] animals = new Animal[]{
+			 new Duck(),
+			 new Chicken(),
+			 new Rooster1(),
+			 new ParrotCat(),
+			 new FishNotSing(),
+			 new Shark(),
+			 new Clownfish(),
+			 new Dolphin(),
+			 new ButterflyCanFly(),
+			 new CaterpillarCanWalk()
+			};
 
 	@Before
 	public void setUpStreams() {
@@ -21,6 +33,7 @@ public class AnimalWorldTest {
 		System.setOut(null);
 	}
 
+	//A. Let’s start with the basics
 	@Test
 	public void testDuckSing() {
 		Duck duck = new Duck();
@@ -84,6 +97,7 @@ public class AnimalWorldTest {
 		assertEquals("Quack, quack" + END_CHAR, output.toString());
 	}
 	
+	//B. Model fish as well as other swimming animals
 	@Test
 	public void testFishNotSingSwim() {
 		FishNotSing fishNotSing = new FishNotSing();
@@ -147,6 +161,7 @@ public class AnimalWorldTest {
 		assertEquals("Dolphin is swimming" + END_CHAR, output.toString());
 	}
 	
+	//D. Model animals that change their behaviour over time
 	@Test
 	public void testButterflyCanFlyFlying() {
 		ButterflyCanFly butterflyCanFly = new ButterflyCanFly();
@@ -173,6 +188,27 @@ public class AnimalWorldTest {
 		CaterpillarCanWalk caterpillarCanWalk = new CaterpillarCanWalk();
 		caterpillarCanWalk.walk();
 		assertEquals("CaterpillarCanWalk is waking" + END_CHAR, output.toString());
+	}
+	
+	//E. Counting animals
+	@Test
+	public void testAnimalWorldCountAnimalsCanFly() {
+		assertEquals(1, AnimalWorld.countAnimalsCanFly(animals));
+	}
+	
+	@Test
+	public void testAnimalWorldCountAnimalsCanWalk() {
+		assertEquals(6, AnimalWorld.countAnimalsCanWalk(animals));
+	}
+	
+	@Test
+	public void testAnimalWorldCountAnimalsCanSing() {
+		assertEquals(4, AnimalWorld.countAnimalsCanSing(animals));
+	}
+	
+	@Test
+	public void testAnimalWorldCountAnimalsCanSwim() {
+		assertEquals(5, AnimalWorld.countAnimalsCanSwim(animals));
 	}
 	
 	

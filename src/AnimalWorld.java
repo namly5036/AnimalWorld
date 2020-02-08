@@ -260,6 +260,46 @@ class ButterflyNotSing implements Butterfly {
 }
 
 public class AnimalWorld {
+	public static int countAnimalsCanFly(Animal[] animals) {
+		int count = 0;
+		for (Animal animal : animals) {
+			if (animal instanceof AnimalCanFly) {
+				count ++;
+			}
+		}
+		return count;
+	}
+	
+	public static int countAnimalsCanWalk(Animal[] animals) {
+		int count = 0;
+		for (Animal animal : animals) {
+			if (animal instanceof AnimalCanWalk) {
+				count ++;
+			}
+		}
+		return count;
+	}
+	
+	public static int countAnimalsCanSing(Animal[] animals) {
+		int count = 0;
+		for (Animal animal : animals) {
+			if (animal instanceof AnimalCanSing) {
+				count ++;
+			}
+		}
+		return count;
+	}
+	
+	public static int countAnimalsCanSwim(Animal[] animals) {
+		int count = 0;
+		for (Animal animal : animals) {
+			if (animal instanceof AnimalCanSwim) {
+				count ++;
+			}
+		}
+		return count;
+	}
+	
 	public static void main(String[] args) {
 		Shark shark = new Shark();
 		shark.size();
@@ -285,5 +325,24 @@ public class AnimalWorld {
 		
 		CaterpillarCanWalk caterpillarCanWalk = new CaterpillarCanWalk();
 		caterpillarCanWalk.walk();
+		
+		// E. Counting animals
+		Animal[] animals = new Animal[]{
+				 new Duck(),
+				 new Chicken(),
+				 new Rooster1(),
+				 new ParrotCat(),
+				 new FishNotSing(),
+				 new Shark(),
+				 new Clownfish(),
+				 new Dolphin(),
+				 new ButterflyCanFly(),
+				 new CaterpillarCanWalk()
+				};
+		
+		System.out.println(countAnimalsCanFly(animals));
+		System.out.println(countAnimalsCanWalk(animals));
+		System.out.println(countAnimalsCanSing(animals));
+		System.out.println(countAnimalsCanSwim(animals));
 	}
 }
