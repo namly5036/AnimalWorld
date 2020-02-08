@@ -70,12 +70,87 @@ class Rooster2 implements Bird {
 	}
 }
 
+abstract class Parrot implements Bird {
+	public void getType() {
+		System.out.println("Parrot");
+	}
+}
+
+class ParrotDog extends Parrot {
+	@Override
+	public void sing() {
+		System.out.println("Woof, woof");
+	}
+
+	@Override
+	public void walk() {
+		System.out.println("ParrotDog is walking");
+	}
+}
+
+class ParrotCat extends Parrot {
+	@Override
+	public void sing() {
+		System.out.println("Meow");
+	}
+
+	@Override
+	public void walk() {
+		System.out.println("ParrotCat is walking");
+	}
+}
+
+class ParrotRooster extends Parrot {
+	@Override
+	public void sing() {
+		System.out.println("Cock-a-doodle-doo");
+	}
+
+	@Override
+	public void walk() {
+		System.out.println("ParrotRooster is walking");
+	}
+}
+
+class ParrotDuck extends Parrot {
+	@Override
+	public void sing() {
+		System.out.println("Quack, quack");
+	}
+
+	@Override
+	public void walk() {
+		System.out.println("ParrotDuck is walking");
+	}
+}
+
+class Fish implements AnimalCanSwim {
+	public void swim() {
+		System.out.println("Fish is swimming");
+	}
+}
+
+class FishNotSing extends Fish {
+	public void swim() {
+		System.out.println("FishNotSing is swimming");
+	}
+}
+
+class FishNotWalk extends Fish {
+	public void swim() {
+		System.out.println("FishNotWalk is swimming");
+	}
+}
+
 public class AnimalWorld {
 	public static void main(String[] args) {
-		Rooster1 rooster1 = new Rooster1();
-		rooster1.sing();
+		Fish fish = new Fish();
+		fish.swim();
+
+		FishNotSing fishNotSing = new FishNotSing();
+		fishNotSing.swim();
 		
-		Rooster2 rooster2 = new Rooster2();
-		rooster2.sing();
+		FishNotWalk fishNotWalk = new FishNotWalk();
+		fishNotWalk.swim();
 	}
 }

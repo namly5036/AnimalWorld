@@ -56,5 +56,54 @@ public class AnimalWorldTest {
 		assertEquals("Cock-a-doodle-doo" + END_CHAR, output.toString());
 	}
 	
+	@Test
+	public void testParrotDogSing() {
+		ParrotDog parrotDog = new ParrotDog();
+		parrotDog.sing();
+		assertEquals("Woof, woof" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testParrotCatSing() {
+		ParrotCat parrotCat = new ParrotCat();
+		parrotCat.sing();
+		assertEquals("Meow" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testParrotRoosterSing() {
+		ParrotRooster parrotRooster = new ParrotRooster();
+		parrotRooster.sing();
+		assertEquals("Cock-a-doodle-doo" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testParrotDuckSing() {
+		ParrotDuck parrotDuck = new ParrotDuck();
+		parrotDuck.sing();
+		assertEquals("Quack, quack" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testFishSwim() {
+		Fish fish = new Fish();
+		fish.swim();
+		assertEquals("Fish is swimming" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testFishNotSingSwim() {
+		FishNotSing fishNotSing = new FishNotSing();
+		fishNotSing.swim();
+		assertEquals("FishNotSing is swimming" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testFishNotWalkSwim() {
+		FishNotWalk fishNotWalk = new FishNotWalk();
+		fishNotWalk.swim();
+		assertEquals("FishNotWalk is swimming" + END_CHAR, output.toString());
+	}
+	
 	
 }
