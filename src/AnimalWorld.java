@@ -212,22 +212,50 @@ class Dolphin implements AnimalCanSwim {
 	}
 }
 
-class ButterflyCanFly implements AnimalCanFly, AnimalCanSing {
+interface Caterpillar extends Animal {
+}
+
+class CaterpillarNotFly implements Caterpillar, AnimalCanWalk {
+
 	@Override
-	public void sing() {
-		System.out.println("ButterflyCanFly is singing");
+	public void walk() {
+		System.out.println("CaterpillarNotFly is waking");
 	}
+}
+
+class CaterpillarCanWalk implements Caterpillar, AnimalCanWalk {
+
+	@Override
+	public void walk() {
+		System.out.println("CaterpillarCanWalk is waking");
+	}
+}
+
+interface Butterfly extends Caterpillar, AnimalCanFly, AnimalCanWalk {
+}
+
+class ButterflyCanFly implements Butterfly {
 
 	@Override
 	public void fly() {
 		System.out.println("ButterflyCanFly is flying");
 	}
+
+	@Override
+	public void walk() {
+		System.out.println("ButterflyCanFly is walking");
+	}
 }
 
-class ButterflyNotSing implements AnimalCanFly {
+class ButterflyNotSing implements Butterfly {
 	@Override
 	public void fly() {
 		System.out.println("ButterflyNotSing is flying");
+	}
+
+	@Override
+	public void walk() {
+		System.out.println("ButterflyNotSing is walking");
 	}
 }
 
@@ -247,10 +275,15 @@ public class AnimalWorld {
 		dolphin.swim();
 		
 		ButterflyCanFly butterflyCanFly = new ButterflyCanFly();
-		butterflyCanFly.sing();
 		butterflyCanFly.fly();
 		
 		ButterflyNotSing butterflyNotSing = new ButterflyNotSing();
 		butterflyNotSing.fly();
+		
+		CaterpillarNotFly caterpillarNotFly = new CaterpillarNotFly();
+		caterpillarNotFly.walk();
+		
+		CaterpillarCanWalk caterpillarCanWalk = new CaterpillarCanWalk();
+		caterpillarCanWalk.walk();
 	}
 }

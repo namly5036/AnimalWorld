@@ -148,13 +148,6 @@ public class AnimalWorldTest {
 	}
 	
 	@Test
-	public void testButterflyCanFlySinging() {
-		ButterflyCanFly butterflyCanFly = new ButterflyCanFly();
-		butterflyCanFly.sing();
-		assertEquals("ButterflyCanFly is singing" + END_CHAR, output.toString());
-	}
-	
-	@Test
 	public void testButterflyCanFlyFlying() {
 		ButterflyCanFly butterflyCanFly = new ButterflyCanFly();
 		butterflyCanFly.fly();
@@ -166,6 +159,20 @@ public class AnimalWorldTest {
 		ButterflyNotSing butterflyNotSing = new ButterflyNotSing();
 		butterflyNotSing.fly();
 		assertEquals("ButterflyNotSing is flying" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testCaterpillarNotFlyWalking() {
+		CaterpillarNotFly caterpillarNotFly = new CaterpillarNotFly();
+		caterpillarNotFly.walk();
+		assertEquals("CaterpillarNotFly is waking" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testCaterpillarCanWalkWalking() {
+		CaterpillarCanWalk caterpillarCanWalk = new CaterpillarCanWalk();
+		caterpillarCanWalk.walk();
+		assertEquals("CaterpillarCanWalk is waking" + END_CHAR, output.toString());
 	}
 	
 	
