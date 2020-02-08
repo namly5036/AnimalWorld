@@ -22,9 +22,23 @@ public class AnimalWorldTest {
 	}
 
 	@Test
-	public void testBirdSing() {
-		Bird bird = new Bird();
-		bird.sing();
-		assertEquals("I am singing" + END_CHAR, output.toString());
+	public void testDuckSing() {
+		Duck duck = new Duck();
+		duck.sing();
+		assertEquals("Quack, quack" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testDuckSwim() {
+		Duck duck = new Duck();
+		duck.swim();
+		assertEquals("Duck is swimming" + END_CHAR, output.toString());
+	}
+
+	@Test
+	public void testChickenSing() {
+		Chicken chicken = new Chicken();
+		chicken.sing();
+		assertEquals("Cluck, cluck" + END_CHAR, output.toString());
 	}
 }

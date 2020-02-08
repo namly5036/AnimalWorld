@@ -13,28 +13,50 @@ interface AnimalCanSing extends Animal {
 	void sing();
 }
 
-class Bird implements AnimalCanWalk, AnimalCanFly, AnimalCanSing {
+interface AnimalCanSwim extends Animal {
+	void swim();
+}
+
+interface Bird extends AnimalCanWalk, AnimalCanSing {
+}
+
+class Duck implements Bird, AnimalCanSwim {
 	@Override
 	public void walk() {
-		System.out.println("I am walking");
-	}
-	
-	@Override
-	public void fly() {
-		System.out.println("I am flying");
+		System.out.println("Duck is walking");
 	}
 
 	@Override
 	public void sing() {
-		System.out.println("I am singing");
+		System.out.println("Quack, quack");
+	}
+
+	@Override
+	public void swim() {
+		System.out.println("Duck is swimming");
+	}
+
+}
+
+class Chicken implements Bird {
+	@Override
+	public void walk() {
+		System.out.println("Chicken is walking");
+	}
+
+	@Override
+	public void sing() {
+		System.out.println("Cluck, cluck");
 	}
 }
 
 public class AnimalWorld {
 	public static void main(String[] args) {
-		Bird bird = new Bird();
-		bird.walk();
-		bird.fly();
-		bird.sing();
+		Duck duck = new Duck();
+		duck.sing();
+		duck.swim();
+
+		Chicken chicken = new Chicken();
+		chicken.sing();
 	}
 }
