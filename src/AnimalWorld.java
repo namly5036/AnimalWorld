@@ -50,13 +50,32 @@ class Chicken implements Bird {
 	}
 }
 
+class Rooster1 extends Chicken {
+	@Override
+	public void sing() {
+		System.out.println("Cock-a-doodle-doo");
+	}
+}
+
+class Rooster2 implements Bird {
+
+	@Override
+	public void walk() {
+		System.out.println("Rooster 2 is walking");
+	}
+
+	@Override
+	public void sing() {
+		System.out.println("Cock-a-doodle-doo");
+	}
+}
+
 public class AnimalWorld {
 	public static void main(String[] args) {
-		Duck duck = new Duck();
-		duck.sing();
-		duck.swim();
-
-		Chicken chicken = new Chicken();
-		chicken.sing();
+		Rooster1 rooster1 = new Rooster1();
+		rooster1.sing();
+		
+		Rooster2 rooster2 = new Rooster2();
+		rooster2.sing();
 	}
 }

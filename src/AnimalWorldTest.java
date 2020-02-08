@@ -41,4 +41,20 @@ public class AnimalWorldTest {
 		chicken.sing();
 		assertEquals("Cluck, cluck" + END_CHAR, output.toString());
 	}
+	
+	@Test
+	public void testRooster1Sing() {
+		Rooster1 rooster1 = new Rooster1();
+		rooster1.sing();
+		assertEquals("Cock-a-doodle-doo" + END_CHAR, output.toString());
+	}
+	
+	@Test
+	public void testRooster2Sing() {
+		Rooster2 rooster2 = new Rooster2();
+		rooster2.sing();
+		assertEquals("Cock-a-doodle-doo" + END_CHAR, output.toString());
+	}
+	
+	
 }
