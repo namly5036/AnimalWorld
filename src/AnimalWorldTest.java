@@ -140,5 +140,12 @@ public class AnimalWorldTest {
 		assertEquals("Clownfish is makeJoke" + END_CHAR, output.toString());
 	}
 	
+	@Test
+	public void testDolphinSwim() {
+		Dolphin dolphin = new Dolphin();
+		dolphin.swim();
+		assertEquals("Dolphin is swimming" + END_CHAR, output.toString());
+	}
+	
 	
 }

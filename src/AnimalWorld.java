@@ -205,6 +205,13 @@ class Clownfish implements Fish {
 	}
 }
 
+class Dolphin implements AnimalCanSwim {
+	@Override
+	public void swim() {
+		System.out.println("Dolphin is swimming");
+	}
+}
+
 public class AnimalWorld {
 	public static void main(String[] args) {
 		Shark shark = new Shark();
@@ -216,5 +223,8 @@ public class AnimalWorld {
 		clownfish.size();
 		clownfish.color();
 		clownfish.makeJoke();
+		
+		Dolphin dolphin = new Dolphin();
+		dolphin.swim();
 	}
 }
