@@ -212,6 +212,25 @@ class Dolphin implements AnimalCanSwim {
 	}
 }
 
+class ButterflyCanFly implements AnimalCanFly, AnimalCanSing {
+	@Override
+	public void sing() {
+		System.out.println("ButterflyCanFly is singing");
+	}
+
+	@Override
+	public void fly() {
+		System.out.println("ButterflyCanFly is flying");
+	}
+}
+
+class ButterflyNotSing implements AnimalCanFly {
+	@Override
+	public void fly() {
+		System.out.println("ButterflyNotSing is flying");
+	}
+}
+
 public class AnimalWorld {
 	public static void main(String[] args) {
 		Shark shark = new Shark();
@@ -226,5 +245,12 @@ public class AnimalWorld {
 		
 		Dolphin dolphin = new Dolphin();
 		dolphin.swim();
+		
+		ButterflyCanFly butterflyCanFly = new ButterflyCanFly();
+		butterflyCanFly.sing();
+		butterflyCanFly.fly();
+		
+		ButterflyNotSing butterflyNotSing = new ButterflyNotSing();
+		butterflyNotSing.fly();
 	}
 }
